@@ -1,0 +1,32 @@
+name: deploy production
+
+on:
+    push:
+        tags:
+            - 'v*.*.*'
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16 # 尽量和线上机 node 版本保持一直
+            - name: lint and test # 测试
+              run: |
+                  npm i
+                  npm run lint
+                  npm run test:remote
+            - name: set ssh key # 临时设置 ssh key
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "${{secrets.ZHANG_ID_RSA}}" > ~/.ssh/id_rsa 
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan "54.178.46.232" >> ~/.ssh/known_hosts
+            - name: deploy # 部署
+              run: ssh zhang@54.178.46.232 "bash -s" < bin/deploy_prd.sh ${{github.ref}}
+            - name: delete ssh key # 删除 ssh key
+              run: rm -rf ~/.ssh/id_rsa

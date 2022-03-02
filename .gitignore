@@ -1,0 +1,7 @@
+tmp-files-windows/
+node_modules/
+logs/
+.docker-volumes/
+package-lock.json
+.DS_Store
+

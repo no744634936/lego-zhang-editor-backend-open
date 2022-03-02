@@ -1,0 +1,2111 @@
+{
+	"info": {
+		"_postman_id": "7a1cafca-ad86-492f-ad20-e372edccf4f6",
+		"name": "lego-zhang-editor-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "数据库连接检查",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/db_check",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"db_check"
+					]
+				},
+				"description": "检查是否 连接到 mysql，mongodb，redis 数据库"
+			},
+			"response": [
+				{
+					"name": "数据库连接检查",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/db_check",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"db_check"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "218"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 10:23:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"name\": \"lego zhang editor backend\",\n        \"version\": \"0.1.0\",\n        \"ENV\": \"dev\",\n        \"mysqlConn\": true,\n        \"mongodbConn\": true,\n        \"redisConn\": true,\n        \"mysqlTablesCreated\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "生成验证码",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phoneNumber\": \"13638137004\",\r\n    \"isRemoteTest\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/genVerifyCode",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"genVerifyCode"
+					]
+				},
+				"description": "输入手机号码后发送，服务器生成手机验证码"
+			},
+			"response": [
+				{
+					"name": "生成验证码",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"13638137004\",\r\n    \"isRemoteTest\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/genVerifyCode",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"genVerifyCode"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 10:18:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"verifyCode\": \"7034\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "使用手机号,验证码登录",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phoneNumber\": \"13638137004\",\r\n    \"verifyCode\": \"2869\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/loginByPhoneNumber",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"loginByPhoneNumber"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "使用手机号,验证码登录",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\": \"13638137004\",\r\n    \"verifyCode\": \"2869\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/loginByPhoneNumber",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"loginByPhoneNumber"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "295"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 10:25:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxMTkzMSwiZXhwIjoxNjQ1Njk4MzMxfQ.6mDWZvrARgwNoPo3cRLboNTKEpIJi5JAYmUusZlz1Ag\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "用户获取自己的信息",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxODg5MCwiZXhwIjoxNjQ1NzA1MjkwfQ.io3FCkuBC_ged2tv8zzPRttAm7siE5_zx-FgmJ26Jzw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/user/getUserInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"getUserInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "用户获取自己的信息",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxMTkzMSwiZXhwIjoxNjQ1Njk4MzMxfQ.6mDWZvrARgwNoPo3cRLboNTKEpIJi5JAYmUusZlz1Ag",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/user/getUserInfo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getUserInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "466"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 10:25:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"userInfo\": {\n            \"id\": 2,\n            \"username\": \"13638137004\",\n            \"password\": \"b3fb1e38df057107ce14dc8c3a81b509\",\n            \"phoneNumber\": \"13638137004\",\n            \"nickName\": \"zhanghaifeng_kkk\",\n            \"gender\": \"0\",\n            \"picture\": null,\n            \"city\": null,\n            \"latestLoginAt\": \"2022-02-23T10:25:31.000Z\",\n            \"isFrozen\": false,\n            \"createdAt\": \"2021-06-04T02:26:18.000Z\",\n            \"updatedAt\": \"2022-02-23T10:25:31.000Z\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "用户更新自己的基本信息",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxMTkzMSwiZXhwIjoxNjQ1Njk4MzMxfQ.6mDWZvrARgwNoPo3cRLboNTKEpIJi5JAYmUusZlz1Ag",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nickName\": \"zhanghaifeng_kkk\",\r\n    \"gender\": \"1\",\r\n    \"picture\": \"test_test\",\r\n    \"city\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/updateUserInfo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"updateUserInfo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "用户更新自己的基本信息",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxMTkzMSwiZXhwIjoxNjQ1Njk4MzMxfQ.6mDWZvrARgwNoPo3cRLboNTKEpIJi5JAYmUusZlz1Ag",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nickName\": \"zhanghaifeng_kkk\",\r\n    \"gender\": \"1\",\r\n    \"picture\": \"test_test\",\r\n    \"city\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/updateUserInfo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updateUserInfo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "295"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 23 Feb 2022 12:21:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTYxODg5MCwiZXhwIjoxNjQ1NzA1MjkwfQ.io3FCkuBC_ged2tv8zzPRttAm7siE5_zx-FgmJ26Jzw\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "用户创建作品",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"zhanghaifeng-final-test\",\r\n    \"desc\":\"docs test\",\r\n    \"content\":{\r\n        \"components\":[\r\n            {\r\n                \"id\":\"afhg12ghe\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\":\"hello-world\",\"top\":0,\"left\":\"20px\"}\r\n            },\r\n            {\r\n                \"id\":\"jhgkfahaf12f\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\": \"hello3\", \"fontSize\": \"15px\", \"actionType\": \"url\", \"url\": \"https://www.baidu.com\", \"lineHeight\": \"3\", \"textAlign\": \"left\", \"fontFamily\": \"\" }\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/work/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "用户创建作品",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"zhanghaifeng-final-test\",\r\n    \"desc\":\"docs test\",\r\n    \"content\":{\r\n        \"components\":[\r\n            {\r\n                \"id\":\"afhg12ghe\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\":\"hello-world\",\"top\":0,\"left\":\"20px\"}\r\n            },\r\n            {\r\n                \"id\":\"jhgkfahaf12f\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\": \"hello3\", \"fontSize\": \"15px\", \"actionType\": \"url\", \"url\": \"https://www.baidu.com\", \"lineHeight\": \"3\", \"textAlign\": \"left\", \"fontFamily\": \"\" }\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/work/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "484"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 04:05:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"isTemplate\": false,\n        \"status\": 1,\n        \"copiedCount\": 0,\n        \"latestPublishAt\": null,\n        \"isHot\": false,\n        \"isNew\": false,\n        \"orderIndex\": 0,\n        \"isPublic\": false,\n        \"id\": 321,\n        \"title\": \"zhanghaifeng-final-test\",\n        \"desc\": \"docs test\",\n        \"authorPhoneNumber\": \"13638137004\",\n        \"uuid\": \"92a3\",\n        \"contentId\": \"62170403571ccde74a619761\",\n        \"updatedAt\": \"2022-02-24T04:05:23.049Z\",\n        \"createdAt\": \"2022-02-24T04:05:23.049Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "用户查询单个作品",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/getWork/323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"getWork",
+						"323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "用户查询单个作品",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/getWork/321",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"getWork",
+								"321"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1425"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 04:18:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"id\": 321,\n        \"uuid\": \"92a3\",\n        \"title\": \"zhanghaifeng-final-test\",\n        \"desc\": \"docs test\",\n        \"contentId\": \"62170403571ccde74a619761\",\n        \"publishContentId\": null,\n        \"authorPhoneNumber\": \"13638137004\",\n        \"coverImg\": null,\n        \"isTemplate\": false,\n        \"status\": \"1\",\n        \"copiedCount\": 0,\n        \"latestPublishAt\": null,\n        \"isHot\": false,\n        \"isNew\": false,\n        \"orderIndex\": 0,\n        \"isPublic\": false,\n        \"createdAt\": \"2022-02-24T04:05:23.000Z\",\n        \"updatedAt\": \"2022-02-24T04:05:23.000Z\",\n        \"user\": {\n            \"userName\": \"13638137004\",\n            \"nickName\": \"zhanghaifeng_kkk\",\n            \"gender\": \"1\",\n            \"picture\": \"test_test\"\n        },\n        \"content\": {\n            \"_id\": \"62170403571ccde74a619761\",\n            \"components\": [\n                {\n                    \"id\": \"afhg12ghe\",\n                    \"name\": \"l-text\",\n                    \"props\": {\n                        \"text\": \"hello-world\",\n                        \"top\": 0,\n                        \"left\": \"20px\"\n                    }\n                },\n                {\n                    \"id\": \"jhgkfahaf12f\",\n                    \"name\": \"l-text\",\n                    \"props\": {\n                        \"text\": \"hello3\",\n                        \"fontSize\": \"15px\",\n                        \"actionType\": \"url\",\n                        \"url\": \"https://www.baidu.com\",\n                        \"lineHeight\": \"3\",\n                        \"textAlign\": \"left\",\n                        \"fontFamily\": \"\"\n                    }\n                }\n            ],\n            \"createdAt\": \"2022-02-24T04:05:23.025Z\",\n            \"updatedAt\": \"2022-02-24T04:05:23.025Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "用户更新作品",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"zhanghaifeng-final-test-123\",\r\n    \"desc\":\"docs test 20123\",\r\n    \"content\":{\r\n        \"components\":[\r\n            {\r\n                \"id\":\"afhg12ghe\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\":\"hello-world-zhanghaifeng\",\"top\":0,\"left\":\"20px\"}\r\n            },\r\n            {\r\n                \"id\":\"jhgkfahaf12f\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\": \"hellokkkkkk\", \"fontSize\": \"15px\", \"actionType\": \"url\", \"url\": \"https://www.baidu.com\", \"lineHeight\": \"3\", \"textAlign\": \"left\", \"fontFamily\": \"\" }\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/work/update/321",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"update",
+						"321"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "用户更新作品",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"zhanghaifeng-final-test-123\",\r\n    \"desc\":\"docs test 20123\",\r\n    \"content\":{\r\n        \"components\":[\r\n            {\r\n                \"id\":\"afhg12ghe\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\":\"hello-world-zhanghaifeng\",\"top\":0,\"left\":\"20px\"}\r\n            },\r\n            {\r\n                \"id\":\"jhgkfahaf12f\",\r\n                \"name\":\"l-text\",\r\n                \"props\":{\"text\": \"hellokkkkkk\", \"fontSize\": \"15px\", \"actionType\": \"url\", \"url\": \"https://www.baidu.com\", \"lineHeight\": \"3\", \"textAlign\": \"left\", \"fontFamily\": \"\" }\r\n            }\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/work/update/321",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"update",
+								"321"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 05:28:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "删除作品",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/321",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"321"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "删除作品",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/321",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"321"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 07:03:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "恢复作品",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/put-back/321",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"put-back",
+						"321"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "恢复作品",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/put-back/321",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"put-back",
+								"321"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 07:14:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "获取作品列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/getMyWorks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"getMyWorks"
+					]
+				},
+				"description": "默认值返回最新的两个作品信息"
+			},
+			"response": [
+				{
+					"name": "获取作品列表",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/getMyWorks",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"getMyWorks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1604"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 07:15:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"list\": [\n            {\n                \"id\": 321,\n                \"uuid\": \"92a3\",\n                \"title\": \"zhanghaifeng-final-test-123\",\n                \"desc\": \"docs test 20123\",\n                \"contentId\": \"62170403571ccde74a619761\",\n                \"publishContentId\": null,\n                \"authorPhoneNumber\": \"13638137004\",\n                \"coverImg\": null,\n                \"isTemplate\": false,\n                \"status\": \"1\",\n                \"copiedCount\": 0,\n                \"latestPublishAt\": null,\n                \"isHot\": false,\n                \"isNew\": false,\n                \"orderIndex\": 0,\n                \"isPublic\": false,\n                \"createdAt\": \"2022-02-24T04:05:23.000Z\",\n                \"updatedAt\": \"2022-02-24T07:14:34.000Z\",\n                \"user\": {\n                    \"userName\": \"13638137004\",\n                    \"nickName\": \"zhanghaifeng_kkk\",\n                    \"gender\": \"1\",\n                    \"picture\": \"test_test\"\n                }\n            },\n            {\n                \"id\": 179,\n                \"uuid\": \"a813\",\n                \"title\": \"未命名作品-复制\",\n                \"desc\": \"未命名作品\",\n                \"contentId\": \"61fdfd6d7193f84c34ced599\",\n                \"publishContentId\": null,\n                \"authorPhoneNumber\": \"13638137004\",\n                \"coverImg\": null,\n                \"isTemplate\": false,\n                \"status\": \"1\",\n                \"copiedCount\": 0,\n                \"latestPublishAt\": null,\n                \"isHot\": false,\n                \"isNew\": false,\n                \"orderIndex\": 0,\n                \"isPublic\": false,\n                \"createdAt\": \"2022-02-05T04:30:37.000Z\",\n                \"updatedAt\": \"2022-02-05T04:30:37.000Z\",\n                \"user\": {\n                    \"userName\": \"13638137004\",\n                    \"nickName\": \"zhanghaifeng_kkk\",\n                    \"gender\": \"1\",\n                    \"picture\": \"test_test\"\n                }\n            }\n        ],\n        \"count\": 20\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "转赠作品,将自己的作品转赠给别人",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/transfer/322/15500005613",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"transfer",
+						"322",
+						"15500005613"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "转赠作品,将自己的作品转赠给别人",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/transfer/321/15500005613",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"transfer",
+								"321",
+								"15500005613"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 07:41:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "发布作品",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/publish/323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"publish",
+						"323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "发布作品",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/publish/323",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"publish",
+								"323"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 08:51:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"url\": \"http://localhost:3001/p/323-9d81\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "作品发布为模板",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/publish-template/323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"publish-template",
+						"323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "作品发布为模板",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/publish-template/323",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"publish-template",
+								"323"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 08:53:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"url\": \"http://localhost:3001/p/323-9d81\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "复制模板",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/work/copy/323",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"work",
+						"copy",
+						"323"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "复制模板",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/work/copy/323",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"work",
+								"copy",
+								"323"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "513"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 08:59:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"isTemplate\": false,\n        \"status\": 1,\n        \"copiedCount\": 0,\n        \"latestPublishAt\": null,\n        \"isHot\": false,\n        \"isNew\": false,\n        \"orderIndex\": 0,\n        \"isPublic\": false,\n        \"id\": 324,\n        \"title\": \"zhanghaifeng-final-test-复制\",\n        \"desc\": \"docs test\",\n        \"coverImg\": null,\n        \"authorPhoneNumber\": \"13638137004\",\n        \"uuid\": \"b71b\",\n        \"contentId\": \"621748e60c43a8857b6044a2\",\n        \"updatedAt\": \"2022-02-24T08:59:18.809Z\",\n        \"createdAt\": \"2022-02-24T08:59:18.809Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "获取所有模板的列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/templates",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"templates"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "获取所有模板的列表",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/templates",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"templates"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1627"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 09:05:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"list\": [\n            {\n                \"id\": 140,\n                \"uuid\": \"2a64\",\n                \"title\": \"新建作品-3394\",\n                \"desc\": \"作品描述-3394\",\n                \"contentId\": \"61e57775639b332b14652bbe\",\n                \"publishContentId\": \"61e57776639b332b14652bc0\",\n                \"authorPhoneNumber\": \"155****8565\",\n                \"coverImg\": null,\n                \"isTemplate\": true,\n                \"status\": \"2\",\n                \"copiedCount\": 1,\n                \"latestPublishAt\": \"2022-01-17T14:04:38.000Z\",\n                \"isHot\": false,\n                \"isNew\": true,\n                \"orderIndex\": 1,\n                \"isPublic\": true,\n                \"createdAt\": \"2022-01-17T14:04:37.000Z\",\n                \"updatedAt\": \"2022-02-01T14:38:42.000Z\",\n                \"user\": {\n                    \"userName\": \"155****8565\",\n                    \"nickName\": \"zhang-9837\",\n                    \"gender\": \"0\",\n                    \"picture\": null\n                }\n            },\n            {\n                \"id\": 112,\n                \"uuid\": \"2820\",\n                \"title\": \"樊登解读意志力-复制\",\n                \"desc\": \"未命名作品\",\n                \"contentId\": \"61511975cd32fc0c805646d9\",\n                \"publishContentId\": null,\n                \"authorPhoneNumber\": \"136****7004\",\n                \"coverImg\": null,\n                \"isTemplate\": true,\n                \"status\": \"1\",\n                \"copiedCount\": 0,\n                \"latestPublishAt\": null,\n                \"isHot\": false,\n                \"isNew\": false,\n                \"orderIndex\": 0,\n                \"isPublic\": true,\n                \"createdAt\": \"2021-09-27T01:08:05.000Z\",\n                \"updatedAt\": \"2021-09-27T01:08:05.000Z\",\n                \"user\": {\n                    \"userName\": \"136****7004\",\n                    \"nickName\": \"zhanghaifeng_kkk\",\n                    \"gender\": \"1\",\n                    \"picture\": \"test_test\"\n                }\n            }\n        ],\n        \"count\": 5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "获取单个模板",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/templates/112",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"templates",
+						"112"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "获取单个模板",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/templates/112",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"templates",
+								"112"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "887"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 09:08:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"id\": 112,\n        \"uuid\": \"2820\",\n        \"title\": \"樊登解读意志力-复制\",\n        \"desc\": \"未命名作品\",\n        \"contentId\": \"61511975cd32fc0c805646d9\",\n        \"publishContentId\": null,\n        \"authorPhoneNumber\": \"136****7004\",\n        \"coverImg\": null,\n        \"isTemplate\": true,\n        \"status\": \"1\",\n        \"copiedCount\": 0,\n        \"latestPublishAt\": null,\n        \"isHot\": false,\n        \"isNew\": false,\n        \"orderIndex\": 0,\n        \"isPublic\": true,\n        \"createdAt\": \"2021-09-27T01:08:05.000Z\",\n        \"updatedAt\": \"2021-09-27T01:08:05.000Z\",\n        \"user\": {\n            \"userName\": \"136****7004\",\n            \"nickName\": \"zhanghaifeng_kkk\",\n            \"gender\": \"1\",\n            \"picture\": \"test_test\"\n        },\n        \"content\": {\n            \"_id\": \"61511975cd32fc0c805646d9\",\n            \"components\": [],\n            \"createdAt\": \"2021-09-27T01:08:05.739Z\",\n            \"updatedAt\": \"2021-09-27T01:08:05.739Z\",\n            \"__v\": 0\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "创建渠道",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"workId\":329,\r\n    \"channelName\":\"tiktok\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/channel/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"channel",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "创建渠道",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"workId\":329,\r\n    \"channelName\":\"tiktok\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/channel",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"channel"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "200"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 15:10:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"status\": 1,\n        \"id\": 3,\n        \"workId\": 329,\n        \"channelName\": \"tiktok\",\n        \"updatedAt\": \"2022-02-24T15:10:58.507Z\",\n        \"createdAt\": \"2022-02-24T15:10:58.507Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "修改渠道名",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"channelName\":\"weibo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/channel/updateName/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"channel",
+						"updateName",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "修改渠道名",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"channelName\":\"weibo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/channel/updateName/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"channel",
+								"updateName",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 15:17:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date"
+						}
+					],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "根据作品的workId获取他的所有渠道",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/channel/getWorkChannels/329",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"channel",
+						"getWorkChannels",
+						"329"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "根据作品的workId获取他的所有渠道",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/channel/getWorkChannels/329",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"channel",
+								"getWorkChannels",
+								"329"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "483"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 15:22:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"count\": 2,\n        \"list\": [\n            {\n                \"id\": 4,\n                \"channelName\": \"wechat\",\n                \"workId\": 329,\n                \"status\": 1,\n                \"createdAt\": \"2022-02-24T15:17:15.000Z\",\n                \"updatedAt\": \"2022-02-24T15:17:32.000Z\"\n            },\n            {\n                \"id\": 3,\n                \"channelName\": \"weibo\",\n                \"workId\": 329,\n                \"status\": 1,\n                \"createdAt\": \"2022-02-24T15:10:58.000Z\",\n                \"updatedAt\": \"2022-02-24T15:21:46.000Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "删除渠道",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/channel/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"channel",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "删除渠道",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTY2NzY2OSwiZXhwIjoxNjQ1NzU0MDY5fQ.lwB86NEMwDwMI1DvHl92IW6VnkrBiRIVd0tztOKKGzA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/channel/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"channel",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 24 Feb 2022 15:23:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "上传图片",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTc1NzA5NiwiZXhwIjoxNjQ1ODQzNDk2fQ.7N2NzuuzpKYWWlC73XYDs2fyjLdzoYqUQ5hMIn4s69o",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "filename1",
+							"type": "file",
+							"src": "/C:/Users/zhang/Desktop/7.png"
+						},
+						{
+							"key": "filename2",
+							"type": "file",
+							"src": "/C:/Users/zhang/Desktop/imooc/2.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/vendor/upload-img",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"vendor",
+						"upload-img"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "上传图片",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjEzNjM4MTM3MDA0IiwicGhvbmVOdW1iZXIiOiIxMzYzODEzNzAwNCIsIm5pY2tOYW1lIjoiemhhbmdoYWlmZW5nX2trayIsImlhdCI6MTY0NTc1NzA5NiwiZXhwIjoxNjQ1ODQzNDk2fQ.7N2NzuuzpKYWWlC73XYDs2fyjLdzoYqUQ5hMIn4s69o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "filename1",
+									"type": "file",
+									"src": "/C:/Users/zhang/Desktop/7.png"
+								},
+								{
+									"key": "filename2",
+									"type": "file",
+									"src": "/C:/Users/zhang/Desktop/imooc/2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/vendor/upload-img",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vendor",
+								"upload-img"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Feb 2022 03:25:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": 0,\n    \"data\": {\n        \"urls\": [\n            \"https://lego-test-bucket.s3.ap-northeast-1.amazonaws.com/upload-files/7-364605.png\",\n            \"https://lego-test-bucket.s3.ap-northeast-1.amazonaws.com/upload-files/2-676607.png\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "测试404页面",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/index",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"index"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "测试404页面",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/index",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"index"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Feb 2022 14:47:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": -2,\n    \"message\": \"404 Not Found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "测试统一异常处理",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/throwError",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"throwError"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "测试统一异常处理",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/throwError",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"throwError"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1943"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 25 Feb 2022 14:48:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errno\": -1,\n    \"data\": {\n        \"message\": \"\",\n        \"stack\": \"Error\\n    at C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\src\\\\routes\\\\index.js:27:11\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\node_modules\\\\koa-compose\\\\index.js:44:32)\\n    at next (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\node_modules\\\\koa-compose\\\\index.js:45:18)\\n    at C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\lib\\\\router.js:346:16\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\node_modules\\\\koa-compose\\\\index.js:44:32)\\n    at C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\node_modules\\\\koa-compose\\\\index.js:36:12\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-router\\\\lib\\\\router.js:351:31)\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-compose\\\\index.js:42:32)\\n    at C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\src\\\\app.js:50:11\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-compose\\\\index.js:42:32)\\n    at views (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-views\\\\src\\\\index.js:91:12)\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-compose\\\\index.js:42:32)\\n    at cors (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa2-cors\\\\dist\\\\index.js:91:15)\\n    at dispatch (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-compose\\\\index.js:42:32)\\n    at serve (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-static\\\\index.js:53:15)\\n    at async logger (C:\\\\Users\\\\zhang\\\\Desktop\\\\lego-zhang-editor-backend\\\\node_modules\\\\koa-logger\\\\index.js:67:7)\"\n    },\n    \"message\": \"运行错误\"\n}"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+name: deploy for dev
+
+on:
+    push:
+        branches:
+            - 'dev' # 只针对 dev 分支
+        paths:
+            - '.github/workflows/*'
+            # - '__test__/**' # dev 不需要立即测试
+            - 'src/**'
+            - 'Dockerfile'
+            - 'docker-compose.yml'
+            - 'bin/*'
+
+jobs:
+    deploy-dev:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: set ssh key # 临时设置 ssh key
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "${{secrets.ZHANG_ID_RSA}}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan "13.114.92.217" >> ~/.ssh/known_hosts
+            - name: deploy # 部署
+              run: |
+                  ssh zhang@13.114.92.217 "
+                    cd /home/zhang/imooc-lego/lego-zhang-editor-backend;
+                    docker-compose down;
+                    git remote add origin https://xxxxxxxxxxxxcanshWel0A0GGx28@github.com/xxxxxxxxxx936/lego-zhang-editor-backend.git;
+                    git checkout dev;
+                    git pull origin dev;
+                    git remote remove origin;
+                    docker-compose build editor-server;
+                    docker-compose up -d;
+                  "
+            - name: delete ssh key # 删除 ssh key
+              run: rm -rf ~/.ssh/id_rsa
