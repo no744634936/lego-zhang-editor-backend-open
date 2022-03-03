@@ -1,7 +1,7 @@
 
 1，路由文件在 src/routes 文件夹里面
 
-2，config/envs里的配置文件的密码信息已全部删除
+2，src/config/envs里的配置文件的密码信息已全部删除
 
 3，项目包括的内容
 
@@ -34,7 +34,7 @@
 
 ・邮件报警
 
-・main分支基于github action的CI，CD，
+・main分支基于github action的CI，CD
 
 ・main分支的版本回滚
 
