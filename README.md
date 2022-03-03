@@ -18,7 +18,7 @@
 
 ・数据库连接
 
-・dev分支基于github action的CI，CD
+・dev分支基于github actions的CI，CD
 
 ・用户api的开发与测试
 
@@ -34,7 +34,7 @@
 
 ・邮件报警
 
-・main分支基于github action的CI，CD
+・main分支基于github actions的CI，CD
 
 ・main分支的版本回滚
 
