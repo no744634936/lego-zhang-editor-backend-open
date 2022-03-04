@@ -50,5 +50,5 @@ module.exports = {
     // email alert config 邮件报警
     emailAddress: 'zhanghaifeng@126.com',
     emailPass: 'xxxxxxxxxx', // 这个是授权密码，不是邮箱的登录密码
-    adminMailAddress: ['zhanghaifeng1123@gmail.com', 'zhanghai.fong@qq.com'], // 邮件报警邮件邮箱
+    adminMailAddress: ['zhanghaifeng1123@gmail.com', 'zhang1123@qq.com'], // 邮件报警邮件邮箱
 }
