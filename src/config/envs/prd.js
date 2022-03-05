@@ -1,9 +1,9 @@
 module.exports = {
     // mysql 连接配置
     mysqlConf: {
-        host: 'database-1.cpkxklkq7i4c.ap-northeast-1.rds.amazonaws.com',
+        host: 'xxxxxxxxxx',
         user: 'admin',
-        password: 'testtest123',
+        password: 'xxxxxxxxx',
         port: '3306',
         database: 'imooc_lego_course',
     },
@@ -16,7 +16,7 @@ module.exports = {
     // redis 连接配置
     redisConf: {
         port: '6379',
-        host: 'demo-redis.d19cgo.0001.apne1.cache.amazonaws.com',
+        host: 'xxxxxxxxxxxxx',
     },
     // 短信验证码缓存时间2分钟，单位 s
     msgVeriCodeTimeout: 2 * 60,
@@ -50,5 +50,5 @@ module.exports = {
     // email alert config 邮件报警
     emailAddress: 'zhanghaifeng2022@126.com',
     emailPass: 'xxxxxxxxxx', // 这个是授权密码，不是邮箱的登录密码
-    adminMailAddress: ['zhanghaifeng1123@gmail.com', 'zhanghai.fong@qq.com'],
+    adminMailAddress: ['zhanghaifeng1123@gmail.com', 'zhanghai@qq.com'],
 }
