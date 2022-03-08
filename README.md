@@ -1,6 +1,6 @@
 项目工具:CentOS、Koa、MYSQL、MongoDB、 Redis、Docker、Git、Nginx
 
-项目描述：海报在线制作网站的后端
+项目描述:海报在线制作网站的后端
 
 1，路由文件在 src/routes 文件夹里面
 
