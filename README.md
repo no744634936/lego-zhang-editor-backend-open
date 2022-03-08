@@ -29,7 +29,7 @@
 
 ・渠道api的开发与测试
 
-・第三方服务api的开发与测试(SMS,S3,baiduContentCensor)
+・第三方服务api的调用与测试(SMS,S3,baiduContentCensor)
 
 ・安全与统一异常处理
 
